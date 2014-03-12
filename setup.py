@@ -34,6 +34,7 @@ setup(name='cisindia.multiviews',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
+          'collective.portlet.collectionmultiview',
           # -*- Extra requirements: -*-
       ],
       extras_require={

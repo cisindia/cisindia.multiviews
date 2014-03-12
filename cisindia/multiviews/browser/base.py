@@ -7,12 +7,12 @@ from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
 class FeaturedRenderer(BaseRenderer):
 
     title = 'Featured Renderer'
-    template = ViewPageTemplateFile('/templates/featured.pt')
+    template = ViewPageTemplateFile('templates/featured.pt')
 
 class ImageListingRenderer(BaseRenderer):
 
     title = 'Image Listing Renderer'
-    template = ViewPageTemplateFile('/templates/image_listing.pt')
+    template = ViewPageTemplateFile('templates/image_listing.pt')
 
 
 class ILeadSummaryRendererSchema(Interface):
@@ -31,17 +31,17 @@ class LeadSummaryRenderer(BaseRenderer):
 
     title = 'Lead Summary Renderer'
     schema = ILeadSummaryRendererSchema
-    template = ViewPageTemplateFile('/templates/lead_summary.pt')
+    template = ViewPageTemplateFile('templates/lead_summary.pt')
 
 class EventsRenderer(BaseRenderer):
 
     title = 'Events Renderer'
-    template = ViewPageTemplateFile('/templates/events.pt')
+    template = ViewPageTemplateFile('templates/events.pt')
 
 class RichTextRenderer(BaseRenderer):
 
     title = 'RichTextRenderer'
-    template = ViewPageTemplateFile('/templates/richtext.pt')
+    template = ViewPageTemplateFile('templates/richtext.pt')
 
 
 class IStaticRichTextSchema(Interface):
@@ -68,4 +68,4 @@ class StaticRichTextRenderer(BaseRenderer):
     }
     schema = IStaticRichTextSchema
     title = 'StaticRichTextRenderer'
-    template = ViewPageTemplateFile('/templates/static_richtext.pt')
+    template = ViewPageTemplateFile('templates/static_richtext.pt')
