@@ -1,5 +1,5 @@
 from collective.portlet.collectionmultiview import BaseRenderer
-from zope.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from zope.interface import Interface
 from zope import schema
 from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
