@@ -32,7 +32,7 @@
                   <img
                    src=""
                        alt=""
-                                 tal:condition="item_obj/image"
+                                 tal:condition="item_obj/image | nothing"
                                  tal:replace="structure
                                  python:
                                  path('nocall:item_obj/tag')(scale='thumb',
