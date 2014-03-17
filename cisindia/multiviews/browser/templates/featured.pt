@@ -33,17 +33,11 @@
                    src=""
                        alt=""
                                  tal:condition="item_obj/image | nothing"
-                                 tal:replace="structure
-                                 python:
-                                 path('nocall:item_obj/tag')(scale='thumb',
-                                 )"
+                                 tal:replace="structure python: path('nocall:item_obj/tag')(scale='thumb', )"
                                  />
                      <img
-                         tal:condition="item_obj/hasContentLeadImage |
-                         nothing"
-                         tal:attributes="src
-                         string:
-                         ${item_url}/leadImage_thumb"
+                         tal:condition="obj/hasContentLeadImage | nothing"
+                         tal:attributes="src string: ${item_obj/absolute_url}/leadImage_thumb"
                        />
 
                    </a>
@@ -58,6 +52,8 @@
          </a>
  
  
+         <div>by <span
+                 tal:content="python:item_obj.portal_membership.getMemberInfo(item_obj.Creator()).get('fullname', '')"/></div>
              <p class="featured-description"
                       tal:content="obj/Description">
                     Description
