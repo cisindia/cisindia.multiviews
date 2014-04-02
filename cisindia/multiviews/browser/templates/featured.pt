@@ -9,9 +9,7 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        <a tal:attributes="href collection_url" tal:omit-tag="not:view/data/show_more">
             <span tal:content="view/data/header" />
-        </a>
         <span class="portletTopRight"></span>
     </dt>
 
@@ -52,8 +50,9 @@
          </a>
  
  
-         <div>by <span
-                 tal:content="python:item_obj.portal_membership.getMemberInfo(item_obj.Creator()).get('fullname', '')"/></div>
+         <div tal:define="name python:item_obj.portal_membership.getMemberInfo(item_obj.Creator()).get('fullname', '')">
+             <span tal:condition="name" tal:content="string: by ${name}"/>
+        </div>
              <p class="featured-description"
                       tal:content="obj/Description">
                     Description
