@@ -10,7 +10,7 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        <a tal:attributes="href more_url" tal:omit-tag="not:view/data/show_more">
+        <a tal:attributes="href more_url">
             <span tal:content="view/data/header" />
         </a>
         <span class="portletTopRight"></span>
@@ -39,7 +39,7 @@
                    <img
                    src=""
                        alt=""
-                                 tal:condition="item_obj/image"
+                                 tal:condition="item_obj/image | nothing"
                                  tal:replace="structure
                                  python:
                                  path('nocall:item_obj/tag')(scale='thumb',
@@ -54,7 +54,8 @@
                        />
             </div>
         </a>
-        <a href="#"
+
+                    <a href="#"
            class="tile subTitle"
            tal:attributes="href obj/getURL;"
            tal:condition="not: repeat/obj/start">
@@ -62,6 +63,10 @@
              Title
             </span>
         </a>
+            <span tal:content="python: obj.created.strftime('%B %d, %Y')">
+                Date
+            </span>
+
 
           <p tal:condition="repeat/obj/start"
              tal:content="obj/Description">
@@ -70,11 +75,11 @@
     </dd>
     </tal:loop>
     
-    <dd class="portletFooter" tal:condition="view/data/show_more">
+    <dd class="portletFooter">
         <span class="portletBottomLeft"></span>
         <span>
-        <a tal:attributes="href more_url" i18n:translate="more_url">
-           <span tal:replace="view/data/more_text|string:More">More</span> &raquo;
+        <a class='readmore' tal:attributes="href more_url" i18n:translate="more_url">
+           <span tal:replace="python: (len(view.collection().results()) - len(view.results())) or ''"/> more articles →
              </a>
         </span>
         <span class="portletBottomRight"></span>

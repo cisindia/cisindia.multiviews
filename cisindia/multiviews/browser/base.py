@@ -15,22 +15,9 @@ class ImageListingRenderer(BaseRenderer):
     template = ViewPageTemplateFile('templates/image_listing.pt')
 
 
-class ILeadSummaryRendererSchema(Interface):
-    more_text = schema.TextLine(
-        title=u'Title for "More" link',
-        default=u"More",
-        required=False
-    )
-    more_url = schema.TextLine(
-        title=u'URL for "More" link',
-        default=None,
-        required=False
-    )
-
 class LeadSummaryRenderer(BaseRenderer):
 
     title = 'Lead Summary Renderer'
-    schema = ILeadSummaryRendererSchema
     template = ViewPageTemplateFile('templates/lead_summary.pt')
 
 class EventsRenderer(BaseRenderer):
