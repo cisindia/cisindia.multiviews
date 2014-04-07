@@ -70,11 +70,6 @@
 
 
 
-           <span class="portletItemDetails"
-                  tal:condition="view/data/show_dates"
-                  tal:content="python:toLocalizedTime(obj.Date)">
-                Date
-            </span>
             <div>
                         <span class="state-expired"
                               tal:condition="python:context.isExpired(item_obj)"
