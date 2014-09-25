@@ -50,7 +50,7 @@
          </a>
  
  
-         <div tal:define="name python:item_obj.portal_membership.getMemberInfo(item_obj.Creator()).get('fullname', '')">
+         <div tal:on-error="nothing" tal:define="name python:item_obj.portal_membership.getMemberInfo(item_obj.Creator()).get('fullname', '')">
              <span tal:condition="name" tal:content="string: by ${name}"/>
         </div>
              <p class="featured-description"
