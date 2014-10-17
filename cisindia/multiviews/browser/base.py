@@ -20,6 +20,7 @@ class LeadSummaryRenderer(BaseRenderer):
     title = 'Lead Summary Renderer'
     template = ViewPageTemplateFile('templates/lead_summary.pt')
 
+
 class EventsRenderer(BaseRenderer):
 
     title = 'Events Renderer'
